@@ -350,7 +350,7 @@ export default function Home() {
           <div className="connect-inner" data-reveal>
             <p className="eyebrow">Join the journey</p>
             <h2>TEAM<br /><i>TOMMY.</i></h2>
-            <p className="connect-copy">Follow Tommy&apos;s journey on Instagram. More official channels will be added here as they launch.</p>
+            <p className="connect-copy">Follow Tommy&apos;s journey on Instagram, Facebook, and YouTube.</p>
             <div className="social-row" aria-label="Tommy's social channels">
               <a
                 href="https://www.instagram.com/tommygodfreyhoops/"
@@ -360,8 +360,22 @@ export default function Home() {
               >
                 Instagram <b>@tommygodfreyhoops ↗</b>
               </a>
-              <span>TikTok <b>Coming soon</b></span>
-              <span>YouTube <b>Coming soon</b></span>
+              <a
+                href="https://www.facebook.com/TommyGodfreyHoops/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Follow Tommy Godfrey Hoops on Facebook (opens in a new tab)"
+              >
+                Facebook <b>@TommyGodfreyHoops ↗</b>
+              </a>
+              <a
+                href="https://www.youtube.com/@TommyGodfreyHoops"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Watch Tommy Godfrey Hoops on YouTube (opens in a new tab)"
+              >
+                YouTube <b>@TommyGodfreyHoops ↗</b>
+              </a>
             </div>
             <div className="contact-panel">
               <div><small>Press & partnerships</small><strong>Family-managed inquiries</strong></div>

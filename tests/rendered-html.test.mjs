@@ -36,7 +36,7 @@ test("server-renders Tommy's finished pre-media homepage", async () => {
   assert.match(html, /AUTISTIC/);
   assert.match(html, /State Games/);
   assert.match(html, /Horizon Sports/);
-  assert.match(html, /tommy-trophy\.webp/);
+  assert.match(html, /tommy-hero-campaign\.png/);
   assert.match(html, /tommy-basketball-game\.webp/);
   assert.match(html, /tommy-harry-the-hawk\.webp/);
   assert.match(html, /Family approved/);

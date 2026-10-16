@@ -115,12 +115,12 @@ export default function Home() {
         <section className="hero" id="top">
           <figure className="hero-photo">
             <Image
-              src="/media/tommy-trophy.webp"
+              src="/media/tommy-hero-campaign.png"
               alt="Tommy smiling while holding his basketball trophy"
               fill
               unoptimized
               priority
-              sizes="(max-width: 800px) 100vw, 48vw"
+              sizes="100vw"
             />
             <figcaption>Superstar &amp; winner</figcaption>
           </figure>

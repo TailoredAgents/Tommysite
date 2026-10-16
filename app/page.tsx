@@ -158,7 +158,7 @@ export default function Home() {
         </section>
 
         <section className="scoreboard" aria-label="Tommy at a glance">
-          <div className="scoreboard-title"><span>Player profile</span><strong>THE NUMBERS</strong></div>
+          <div className="scoreboard-title"><span>Player profile</span></div>
           <div className="scoreboard-stat"><strong>08</strong><span>Sports<br />and counting</span></div>
           <div className="scoreboard-stat"><strong>2×</strong><span>State Games<br />first place</span></div>
           <div className="scoreboard-stat spirit"><strong>∞</strong><span>Heart, joy<br />and energy</span></div>

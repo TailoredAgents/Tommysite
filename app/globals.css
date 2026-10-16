@@ -355,7 +355,7 @@ body:before {
 .hero-copy { grid-template-columns: minmax(0, 1.8fr) minmax(230px, .52fr); }
 .hero h1 { font-size: clamp(76px, 10.6vw, 168px); }
 .hero h1 span { display: block; }
-.hero h1 span:last-child { margin-left: .28em; }
+.hero h1 span:last-child { margin-left: .28em; font-size: .86em; letter-spacing: -.055em; }
 .hero h1 em { position: relative; z-index: 0; }
 .hero h1 em:after {
   content: "";
@@ -431,7 +431,7 @@ body:before {
 .section-label:after { content: ""; height: 1px; flex: 1; margin-left: 8px; background: currentColor; opacity: .22; }
 .story-grid { position: relative; }
 .story-grid:after {
-  content: "ALL HEART / ALL GAME";
+  content: "ALL HEART / EVERY GAME";
   position: absolute;
   left: 1vw;
   bottom: -58px;
@@ -618,7 +618,7 @@ body:before {
   .hero:after { inset: 72px 0 0; border: 0; }
   .hero-photo { inset: 72px 0 0; width: 100%; clip-path: none; }
   .hero h1 { font-size: clamp(67px, 18vw, 116px); }
-  .hero h1 span:last-child { margin-left: 0; }
+  .hero h1 span:last-child { margin-left: 0; font-size: .86em; }
   .hero-copy p { padding: 12px 0 0; border-left: 0; border-top: 2px solid var(--lime); }
   .hero-rail { display: none; }
   .scoreboard { grid-template-columns: 1fr 1fr; }

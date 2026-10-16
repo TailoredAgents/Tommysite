@@ -29,7 +29,7 @@ test("server-renders Tommy's finished pre-media homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Tommy Godfrey \| All Heart\. All Game\.<\/title>/i);
+  assert.match(html, /<title>Tommy Godfrey \| All Heart\. Every Game\.<\/title>/i);
   assert.match(html, /ALL <em>HEART\.<\/em>/);
   assert.match(html, /THE REEL/);
   assert.match(html, /SUPERSTAR/);

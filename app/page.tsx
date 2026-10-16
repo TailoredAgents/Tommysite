@@ -132,7 +132,7 @@ export default function Home() {
           <div className="hero-copy">
             <h1>
               <span>ALL <em>HEART.</em></span>
-              <span>ALL <em>GAME.</em></span>
+              <span>EVERY <em>GAME.</em></span>
             </h1>
             <p>
               Tommy Godfrey is a 16-year-old nonverbal autistic athlete,

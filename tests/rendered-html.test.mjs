@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -23,7 +23,7 @@ async function render() {
   );
 }
 
-test("server-renders Tommy's finished pre-media homepage", async () => {
+test("server-renders Tommy's finished media homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -39,6 +39,9 @@ test("server-renders Tommy's finished pre-media homepage", async () => {
   assert.match(html, /tommy-hero-campaign\.png/);
   assert.match(html, /tommy-basketball-game\.webp/);
   assert.match(html, /tommy-harry-the-hawk\.webp/);
+  assert.match(html, /tommy-half-court-shot\.mp4/);
+  assert.match(html, /tommy-half-court-shot-poster\.webp/);
+  assert.match(html, /preload="none"/);
   assert.match(html, /Family approved/);
   assert.match(html, /Privacy first/);
   assert.match(html, /Made accessible/);
@@ -48,23 +51,31 @@ test("server-renders Tommy's finished pre-media homepage", async () => {
   assert.doesNotMatch(html, /EST\. 2009|The motto|Court vision/i);
 });
 
-test("keeps the pre-media experience honest and accessible", async () => {
-  const [page, styles, layout, packageJson, renderConfig] = await Promise.all([
+test("keeps the media experience fast, honest, and accessible", async () => {
+  const [page, styles, layout, packageJson, renderConfig, videoAsset, posterAsset] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../render.yaml", import.meta.url), "utf8"),
+    stat(new URL("../public/media/tommy-half-court-shot.mp4", import.meta.url)),
+    stat(new URL("../public/media/tommy-half-court-shot-poster.webp", import.meta.url)),
   ]);
 
   assert.match(page, /className="skip-link"/);
   assert.match(page, /event\.key === "Escape"/);
-  assert.match(page, /The first photos are here/);
+  assert.match(page, /The first reel is live/);
+  assert.match(page, /preload="none"/);
+  assert.match(page, /playsInline/);
+  assert.match(page, /aria-label="Tommy taking a half-court basketball shot in a packed gym"/);
   assert.match(page, /alt="Tommy smiling while holding his basketball trophy"/);
   assert.match(page, /Family managed|Family approved/i);
   assert.match(page, /nonverbal autistic athlete/i);
   assert.match(page, /autism community/i);
-  assert.doesNotMatch(page, /className="play"|Video coming soon/);
+  assert.doesNotMatch(page, /Video coming soon/);
+
+  assert.ok(videoAsset.size > 20_000_000 && videoAsset.size < 30_000_000);
+  assert.ok(posterAsset.size > 50_000 && posterAsset.size < 300_000);
 
   assert.match(styles, /position:\s*fixed/);
   assert.match(styles, /:focus-visible/);

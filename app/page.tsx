@@ -10,6 +10,8 @@ const highlights = [
     note: "Since age three",
     tone: "orange",
     motif: "basketball",
+    availability: "Featured film",
+    status: "Live",
     description: "Tommy began shooting basketballs at three and now regularly sinks half-court shots.",
   },
   {
@@ -18,6 +20,8 @@ const highlights = [
     note: "Back-to-back firsts",
     tone: "lime",
     motif: "tennis",
+    availability: "Media reserved",
+    status: "Soon",
     description: "A two-time first-place finisher in his Special Olympics State Games division.",
   },
   {
@@ -26,6 +30,8 @@ const highlights = [
     note: "Any game, any time",
     tone: "blue",
     motif: "motion",
+    availability: "Media reserved",
+    status: "Soon",
     description: "Softball, baseball, racquetball, bowling, soccer, golf—and whatever comes next.",
   },
 ];
@@ -252,27 +258,54 @@ export default function Home() {
           <div className="section-label light" data-reveal><span>02</span> Media library</div>
           <div className="section-head" data-reveal>
             <h2>THE REEL<br /><i>STARTS HERE.</i></h2>
-            <p>Purpose-built spaces for Tommy’s real moments—ready when the footage is.</p>
+            <p>Tommy&apos;s first game film is live. One shot, one gym, one huge reaction.</p>
           </div>
+          <article className="featured-reel" data-reveal>
+            <div className="featured-reel-media">
+              <video
+                aria-label="Tommy taking a half-court basketball shot in a packed gym"
+                controls
+                playsInline
+                preload="none"
+                poster="/media/tommy-half-court-shot-poster.webp"
+                width="1280"
+                height="720"
+              >
+                <source src="/media/tommy-half-court-shot.mp4" type="video/mp4" />
+                Your browser does not support HTML video. <a href="/media/tommy-half-court-shot.mp4">Watch the half-court shot.</a>
+              </video>
+              <span className="featured-reel-corner" aria-hidden="true">TG / 01</span>
+            </div>
+            <div className="featured-reel-copy">
+              <div className="featured-reel-meta">
+                <span><i className="availability-dot" /> Now playing</span>
+                <time dateTime="PT19S">00:19</time>
+              </div>
+              <p className="featured-reel-overline">Game film / Basketball</p>
+              <h3>HALF COURT.<br /><i>FULL HEART.</i></h3>
+              <p className="featured-reel-description">Tommy takes center court with the whole gym watching. Press play for the shot—and the roar that follows.</p>
+              <span className="featured-reel-note">Full quality · Sound on</span>
+            </div>
+          </article>
           <div className="highlight-grid" data-reveal>
             {highlights.map((item) => (
               <article className={`highlight-card ${item.tone}`} key={item.sport}>
                 <div className="card-top">
                   <span>{item.number}</span>
-                  <small><i className="availability-dot" /> Media reserved</small>
+                  <small><i className="availability-dot" /> {item.availability}</small>
                 </div>
                 <div className={`sport-motif ${item.motif}`} aria-hidden="true">
                   <span className="motif-ring" /><span className="motif-line" />
                 </div>
                 <div className="card-bottom">
                   <div><small>{item.note}</small><h3>{item.sport}</h3></div>
-                  <span className="media-status">Soon <b aria-hidden="true">↗</b></span>
+                  <span className="media-status">{item.status} <b aria-hidden="true">↗</b></span>
                 </div>
                 <p className="card-description">{item.description}</p>
               </article>
             ))}
           </div>
-          <p className="media-note">The first photos are here. Sport-specific action galleries will grow as Tommy’s new media arrives.</p>
+          <p className="media-note">The first reel is live. Sport-specific action galleries will keep growing as Tommy&apos;s new media arrives.</p>
         </section>
 
         <section className="why" id="purpose" aria-label="Tommy and the autism community">

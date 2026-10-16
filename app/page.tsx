@@ -173,7 +173,6 @@ export default function Home() {
         <section className="featured-play" id="highlights" aria-label="Featured game film">
           <div className="featured-play-head" data-reveal>
             <div className="section-label light"><span aria-hidden="true">▶</span> Featured moment</div>
-            <p>One shot, one gym, one huge reaction.</p>
           </div>
           <article className="featured-reel" data-reveal>
             <div className="featured-reel-media">

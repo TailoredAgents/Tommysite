@@ -43,6 +43,7 @@ test("server-renders Tommy's finished media homepage", async () => {
   assert.match(html, /tommy-half-court-shot-poster\.webp/);
   assert.match(html, /preload="none"/);
   assert.match(html, /THE HALF-COURT/);
+  assert.doesNotMatch(html, /One shot, one gym/i);
   assert.ok(html.indexOf("tommy-half-court-shot.mp4") < html.indexOf('id="story"'));
   assert.match(html, /Family approved/);
   assert.match(html, /Privacy first/);

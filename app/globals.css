@@ -536,14 +536,9 @@ body:before {
 .featured-play-head {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 35px;
   margin-bottom: 38px;
 }
 .featured-play .section-label { margin: 0; }
-.featured-play-head > p { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
 .featured-play .featured-reel { margin-bottom: 0; }
 .featured-reel {
   position: relative;
@@ -764,8 +759,7 @@ body:before {
   .record-grid { box-shadow: 7px 7px 0 var(--orange); }
   .featured-play { padding: 58px 5vw 78px; }
   .featured-play:before { top: 28px; font-size: 118px; }
-  .featured-play-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 34px; }
-  .featured-play-head > p { padding-left: 49px; }
+  .featured-play-head { margin-bottom: 34px; }
   .featured-reel {
     grid-template-columns: 1fr;
     margin-right: 7px;

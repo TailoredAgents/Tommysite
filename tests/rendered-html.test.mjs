@@ -43,6 +43,7 @@ test("server-renders Tommy's finished pre-media homepage", async () => {
   assert.match(html, /Privacy first/);
   assert.match(html, /Made accessible/);
   assert.match(html, /Family-managed inquiries/);
+  assert.match(html, /instagram\.com\/tommygodfreyhoops/);
   assert.doesNotMatch(html, /codex-preview|Starter Project|react-loading-skeleton/i);
   assert.doesNotMatch(html, /EST\. 2009|The motto|Court vision/i);
 });

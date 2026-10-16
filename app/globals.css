@@ -171,9 +171,12 @@ h1 em, h2 i { color: var(--lime); font-style: italic; font-weight: inherit; }
 .connect h2 i { color: var(--lime); }
 .connect-copy { max-width: 610px; margin: 45px auto; font-size: 18px; line-height: 1.6; font-weight: 600; }
 .social-row { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.45); border-bottom: 1px solid rgba(255,255,255,.45); }
-.social-row span { padding: 25px 20px; display: flex; align-items: center; justify-content: space-between; font-weight: 900; text-transform: uppercase; }
-.social-row span + span { border-left: 1px solid rgba(255,255,255,.45); }
+.social-row > a, .social-row > span { padding: 25px 20px; display: flex; align-items: center; justify-content: space-between; font-weight: 900; text-transform: uppercase; }
+.social-row > * + * { border-left: 1px solid rgba(255,255,255,.45); }
+.social-row > a { transition: background .2s ease, color .2s ease; }
+.social-row > a:hover, .social-row > a:focus-visible { background: var(--lime); color: var(--ink); }
 .social-row b { font-size: 9px; color: var(--lime); letter-spacing: .12em; }
+.social-row > a:hover b, .social-row > a:focus-visible b { color: var(--ink); }
 .contact-panel { margin-top: 42px; padding: 26px 28px; background: var(--ink); text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
 .contact-panel div { display: flex; flex-direction: column; gap: 5px; }
 .contact-panel small { color: var(--lime); font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
@@ -224,7 +227,7 @@ footer a { justify-self: end; }
   .care-grid article { min-height: 210px; }
   .care-grid article + article { border-left: 0; border-top: 2px solid var(--ink); }
   .social-row { grid-template-columns: 1fr; }
-  .social-row span + span { border-left: 0; border-top: 1px solid rgba(255,255,255,.45); }
+  .social-row > * + * { border-left: 0; border-top: 1px solid rgba(255,255,255,.45); }
   .contact-panel { align-items: flex-start; flex-direction: column; }
   footer { grid-template-columns: 1fr; }
   footer a { justify-self: start; }

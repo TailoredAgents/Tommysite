@@ -170,6 +170,40 @@ export default function Home() {
           <div className="scoreboard-stat spirit"><strong>∞</strong><span>Heart, joy<br />and energy</span></div>
         </section>
 
+        <section className="featured-play" id="highlights" aria-label="Featured game film">
+          <div className="featured-play-head" data-reveal>
+            <div className="section-label light"><span aria-hidden="true">▶</span> Featured moment</div>
+            <p>One shot, one gym, one huge reaction.</p>
+          </div>
+          <article className="featured-reel" data-reveal>
+            <div className="featured-reel-media">
+              <video
+                aria-label="Tommy taking a half-court basketball shot in a packed gym"
+                controls
+                playsInline
+                preload="none"
+                poster="/media/tommy-half-court-shot-poster.webp"
+                width="1280"
+                height="720"
+              >
+                <source src="/media/tommy-half-court-shot.mp4" type="video/mp4" />
+                Your browser does not support HTML video. <a href="/media/tommy-half-court-shot.mp4">Watch the half-court shot.</a>
+              </video>
+              <span className="featured-reel-corner" aria-hidden="true">TG / 01</span>
+            </div>
+            <div className="featured-reel-copy">
+              <div className="featured-reel-meta">
+                <span><i className="availability-dot" /> Now playing</span>
+                <time dateTime="PT19S">00:19</time>
+              </div>
+              <p className="featured-reel-overline">Game film / Basketball</p>
+              <h3>THE HALF-COURT<br /><i>SHOT.</i></h3>
+              <p className="featured-reel-description">Tommy takes center court with the whole gym watching. Press play for the shot—and the roar that follows.</p>
+              <span className="featured-reel-note">Full quality · Sound on</span>
+            </div>
+          </article>
+        </section>
+
         <section className="story" id="story">
           <div className="section-label" data-reveal><span>01</span> The person behind the player</div>
           <div className="story-grid" data-reveal>
@@ -254,39 +288,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="highlights" id="highlights">
+        <section className="highlights" aria-label="Media library">
           <div className="section-label light" data-reveal><span>02</span> Media library</div>
           <div className="section-head" data-reveal>
-            <h2>THE REEL<br /><i>STARTS HERE.</i></h2>
-            <p>Tommy&apos;s first game film is live. One shot, one gym, one huge reaction.</p>
+            <h2>MORE REELS<br /><i>ON DECK.</i></h2>
+            <p>Basketball is live. Tennis and more sport-specific moments are next.</p>
           </div>
-          <article className="featured-reel" data-reveal>
-            <div className="featured-reel-media">
-              <video
-                aria-label="Tommy taking a half-court basketball shot in a packed gym"
-                controls
-                playsInline
-                preload="none"
-                poster="/media/tommy-half-court-shot-poster.webp"
-                width="1280"
-                height="720"
-              >
-                <source src="/media/tommy-half-court-shot.mp4" type="video/mp4" />
-                Your browser does not support HTML video. <a href="/media/tommy-half-court-shot.mp4">Watch the half-court shot.</a>
-              </video>
-              <span className="featured-reel-corner" aria-hidden="true">TG / 01</span>
-            </div>
-            <div className="featured-reel-copy">
-              <div className="featured-reel-meta">
-                <span><i className="availability-dot" /> Now playing</span>
-                <time dateTime="PT19S">00:19</time>
-              </div>
-              <p className="featured-reel-overline">Game film / Basketball</p>
-              <h3>HALF COURT.<br /><i>FULL HEART.</i></h3>
-              <p className="featured-reel-description">Tommy takes center court with the whole gym watching. Press play for the shot—and the roar that follows.</p>
-              <span className="featured-reel-note">Full quality · Sound on</span>
-            </div>
-          </article>
           <div className="highlight-grid" data-reveal>
             {highlights.map((item) => (
               <article className={`highlight-card ${item.tone}`} key={item.sport}>

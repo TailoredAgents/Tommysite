@@ -31,7 +31,7 @@ test("server-renders Tommy's finished media homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>Tommy Godfrey \| All Heart\. Every Game\.<\/title>/i);
   assert.match(html, /ALL <em>HEART\.<\/em>/);
-  assert.match(html, /THE REEL/);
+  assert.match(html, /MORE REELS/);
   assert.match(html, /SUPERSTAR/);
   assert.match(html, /AUTISTIC/);
   assert.match(html, /State Games/);
@@ -42,6 +42,8 @@ test("server-renders Tommy's finished media homepage", async () => {
   assert.match(html, /tommy-half-court-shot\.mp4/);
   assert.match(html, /tommy-half-court-shot-poster\.webp/);
   assert.match(html, /preload="none"/);
+  assert.match(html, /THE HALF-COURT/);
+  assert.ok(html.indexOf("tommy-half-court-shot.mp4") < html.indexOf('id="story"'));
   assert.match(html, /Family approved/);
   assert.match(html, /Privacy first/);
   assert.match(html, /Made accessible/);
@@ -68,6 +70,8 @@ test("keeps the media experience fast, honest, and accessible", async () => {
   assert.match(page, /preload="none"/);
   assert.match(page, /playsInline/);
   assert.match(page, /aria-label="Tommy taking a half-court basketball shot in a packed gym"/);
+  assert.ok(page.indexOf('id="highlights"') < page.indexOf('id="story"'));
+  assert.doesNotMatch(page, /HALF COURT\.<br \/><i>FULL HEART/i);
   assert.match(page, /alt="Tommy smiling while holding his basketball trophy"/);
   assert.match(page, /Family managed|Family approved/i);
   assert.match(page, /nonverbal autistic athlete/i);
